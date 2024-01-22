@@ -1,0 +1,49 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pandora.Application", "Pandora.Application\Pandora.Application.csproj", "{882F8DC9-A473-45A8-8808-B5E4AF5030CF}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pandora.Domain", "Pandora.Domain\Pandora.Domain.csproj", "{0B22F58C-ED1F-4B02-A768-AD38A45F85A0}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pandora.Infrastructure", "Pandora.Infrastructure\Pandora.Infrastructure.csproj", "{77C1F57E-83BC-4491-A66A-3380376A422D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pandora.API", "Pandora.API\Pandora.API.csproj", "{ECCA5E27-5C8A-4FE7-87AC-A67FD522417A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pandora.MigrationChecker", "Pandora.MigrationChecker\Pandora.MigrationChecker.csproj", "{383BF751-9FED-4780-B056-6D06C689CE50}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{882F8DC9-A473-45A8-8808-B5E4AF5030CF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{882F8DC9-A473-45A8-8808-B5E4AF5030CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{882F8DC9-A473-45A8-8808-B5E4AF5030CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{882F8DC9-A473-45A8-8808-B5E4AF5030CF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0B22F58C-ED1F-4B02-A768-AD38A45F85A0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0B22F58C-ED1F-4B02-A768-AD38A45F85A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0B22F58C-ED1F-4B02-A768-AD38A45F85A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0B22F58C-ED1F-4B02-A768-AD38A45F85A0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{77C1F57E-83BC-4491-A66A-3380376A422D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{77C1F57E-83BC-4491-A66A-3380376A422D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{77C1F57E-83BC-4491-A66A-3380376A422D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{77C1F57E-83BC-4491-A66A-3380376A422D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ECCA5E27-5C8A-4FE7-87AC-A67FD522417A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ECCA5E27-5C8A-4FE7-87AC-A67FD522417A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ECCA5E27-5C8A-4FE7-87AC-A67FD522417A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ECCA5E27-5C8A-4FE7-87AC-A67FD522417A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{383BF751-9FED-4780-B056-6D06C689CE50}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{383BF751-9FED-4780-B056-6D06C689CE50}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{383BF751-9FED-4780-B056-6D06C689CE50}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{383BF751-9FED-4780-B056-6D06C689CE50}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {508E1061-5A6D-4964-969B-7174EB39277C}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "Pandora.MigrationChecker": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "DOTNET_ENVIRONMENT": "Development"
+      }
+    }
+  }
+}
