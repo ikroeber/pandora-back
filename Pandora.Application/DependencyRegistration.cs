@@ -10,7 +10,6 @@ using Pandora.Application.Dto;
 using Pandora.Application.Mappings;
 using Pandora.Application.Services;
 using Pandora.Domain.Entities;
-using Pandora.Domain.Mappings;
 
 namespace Pandora.Application
 {
@@ -18,7 +17,9 @@ namespace Pandora.Application
     {
         public static IServiceCollection AddApplicationRegistrations(this IServiceCollection services)
         {
-            services.AddScoped<IMapper<User, UserDto>, UserMapper>();
+            services.AddAutoMapper(configuration =>
+                configuration.AddProfile<UserProfile>());
+
             services.AddScoped<IUserService, UserService>();
             return services;
         }

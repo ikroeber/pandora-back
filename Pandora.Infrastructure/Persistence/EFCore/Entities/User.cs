@@ -26,10 +26,20 @@ namespace Pandora.Infrastructure.Persistence.EFCore.Entities
                         value => UserId.From(value))
                    .HasColumnName("UserId");
 
-            builder.Property(user => user.Email).HasMaxLength(60);
+            builder.HasIndex(user => user.Email)
+                   .IsUnique();
 
-            builder.Property(user => user.FirstName).HasMaxLength(30);
-            builder.Property(user => user.LastName).HasMaxLength(30);
+            builder.Property(user => user.Email)
+                   .HasMaxLength(60)
+                   .IsRequired();
+
+            builder.Property(user => user.FirstName)
+                   .HasMaxLength(30)
+                   .IsRequired();
+
+            builder.Property(user => user.LastName)
+                   .HasMaxLength(30)
+                   .IsRequired();
         }
     }
 }

@@ -12,11 +12,8 @@ using Pandora.Infrastructure.Persistence.EFCore;
 
 var builder = Host.CreateApplicationBuilder(args);
 
-var x = builder.Environment.EnvironmentName;
-
 builder.Services
-       .AddInfrastructureRegistrations(
-            builder.Configuration.GetConnectionString("pandora-db"));
+       .AddInfrastructureRegistrations();
 
 builder.Services.AddTransient<MigrationChecker>();
 

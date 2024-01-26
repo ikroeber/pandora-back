@@ -7,28 +7,23 @@ using Pandora.Domain.ValueObjects;
 namespace Pandora.API.Controllers
 {
     [Route("api/v1/[controller]")]
-    public class UsersController : PandoraAPIController
+    public class UsersController(IUserService userServices) : PandoraAPIController
     {
-        private readonly IUserService _userServices;
-
-        public UsersController(IUserService userServices)
-        {
-            _userServices = userServices;
-        }
+        private readonly IUserService _userServices = userServices;
 
         [HttpPost]
-        public UserDto AddUser(UserDto userDTO)
+        public UserDto AddUser(CreateUserDto createUserDto)
         {
-            userDTO = _userServices.AddNewUser(userDTO);
-            return userDTO;
+            UserDto user = _userServices.AddNewUser(createUserDto);
+            return user;
         }
 
         [HttpGet]
         [Route("{userId:guid}")]
         public UserDto? GetUserById(Guid userId)
         {
-            UserDto? userDTO = _userServices.GetUserById(userId);
-            return userDTO;
+            UserDto? user = _userServices.GetUserById(userId);
+            return user;
         }
 
         [HttpGet]

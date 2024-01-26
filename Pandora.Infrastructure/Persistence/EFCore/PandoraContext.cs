@@ -12,14 +12,9 @@ using Pandora.Domain.Entities;
 
 namespace Pandora.Infrastructure.Persistence.EFCore
 {
-    public class PandoraContext : DbContext
+    public class PandoraContext(DbContextOptions options, IConfiguration configuration) : DbContext(options)
     {
-        private readonly IConfiguration _configuration;
-
-        public PandoraContext(DbContextOptions options, IConfiguration configuration) : base(options)
-        {
-            _configuration = configuration;
-        }
+        private readonly IConfiguration _configuration = configuration;
 
         public DbSet<User> Users { get; set; }
 

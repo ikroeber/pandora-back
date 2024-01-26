@@ -4,20 +4,33 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+using Microsoft.Extensions.DependencyInjection;
+
 using Pandora.Domain;
-using Pandora.Infrastructure.Persistence.EFCore.Repositories;
+using Pandora.Domain.Entities;
 
 namespace Pandora.Infrastructure.Persistence.EFCore
 {
-    public class UnitOfWork(PandoraContext context, IUserRepository userRepository) : IUnitOfWork
+    public class UnitOfWork(PandoraContext context) : IUnitOfWork
     {
         private readonly PandoraContext _context = context;
+        private readonly List<object> _repositories = [];
 
-        public void Commit()
+        public void SaveChanges()
         {
             _context.SaveChanges();
         }
 
-        public IRepository UserRepository { get; } = userRepository;
+        public IRepository<T> GetRepository<T>() where T : Entity
+        {
+            if (!_repositories.Any(r => r is IRepository<T>))
+            {
+                IRepository<T> repo = new EFCoreRepository<T>(_context);
+                _repositories.Add(repo);
+                return repo;
+            }
+
+            return (_repositories.Single(r => r is IRepository<T>) as IRepository<T>)!;
+        }
     }
 }

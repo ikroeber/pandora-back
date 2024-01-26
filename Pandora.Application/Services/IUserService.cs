@@ -10,7 +10,7 @@ namespace Pandora.Application.Services
 {
     public interface IUserService
     {
-        public UserDto AddNewUser(UserDto userDTO);
+        public UserDto AddNewUser(CreateUserDto createUserDTO);
         public UserDto? GetUserById(Guid id);
         public IEnumerable<UserDto> GetUsers();
     }

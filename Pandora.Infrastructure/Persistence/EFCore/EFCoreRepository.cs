@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore;
 using Pandora.Domain;
 using Pandora.Domain.Entities;
 
-namespace Pandora.Infrastructure.Persistence.EFCore.Repositories
+namespace Pandora.Infrastructure.Persistence.EFCore
 {
     public class EFCoreRepository<T>(PandoraContext context) : IRepository<T> where T : Entity
     {
@@ -54,6 +54,7 @@ namespace Pandora.Infrastructure.Persistence.EFCore.Repositories
             {
                 _entitySet.Attach(entity);
             }
+
             _entitySet.Remove(entity);
         }
 
@@ -65,11 +66,8 @@ namespace Pandora.Infrastructure.Persistence.EFCore.Repositories
 
         public void Update(T entity)
         {
-            if (_context.Entry(entity).State == EntityState.Detached)
-            {
-                _entitySet.Attach(entity);
-                _context.Entry(entity).State = EntityState.Modified;
-            }
+            _entitySet.Attach(entity);
+            _context.Entry(entity).State = EntityState.Modified;
         }
     }
 }

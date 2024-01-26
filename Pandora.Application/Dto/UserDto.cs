@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace Pandora.Application.Dto
 
 {    public record UserDto(Guid UserId,
-                          string Email,
-                          string FirstName,
-                          string LastName);
+                           string Email,
+                           string FirstName,
+                           string LastName);
 }

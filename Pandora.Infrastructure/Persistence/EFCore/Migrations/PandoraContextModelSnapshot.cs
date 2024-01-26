@@ -22,27 +22,33 @@ namespace Pandora.Infrastructure.Persistence.EFCore.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("Pandora.Domain.User", b =>
+            modelBuilder.Entity("Pandora.Domain.Entities.User", b =>
                 {
-                    b.Property<Guid>("Id")
+                    b.Property<Guid>("UserId")
                         .HasColumnType("uniqueidentifier")
                         .HasColumnName("UserId");
 
                     b.Property<string>("Email")
+                        .IsRequired()
                         .HasMaxLength(60)
                         .HasColumnType("nvarchar(60)");
 
                     b.Property<string>("FirstName")
+                        .IsRequired()
                         .HasMaxLength(30)
                         .HasColumnType("nvarchar(30)");
 
                     b.Property<string>("LastName")
+                        .IsRequired()
                         .HasMaxLength(30)
                         .HasColumnType("nvarchar(30)");
 
-                    b.HasKey("Id");
+                    b.HasKey("UserId");
 
-                    b.ToTable("Users");
+                    b.HasIndex("Email")
+                        .IsUnique();
+
+                    b.ToTable("User", (string)null);
                 });
 #pragma warning restore 612, 618
         }

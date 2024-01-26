@@ -8,7 +8,6 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Configuration;
 
 using Pandora.Domain;
-using Pandora.Infrastructure.Persistence.EFCore.Repositories;
 using Pandora.Infrastructure.Persistence.EFCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
@@ -19,10 +18,10 @@ namespace Pandora.Infrastructure
     public static class DependencyRegistration
     {
         public static IServiceCollection AddInfrastructureRegistrations(
-            this IServiceCollection services, string? connectionString)
+            this IServiceCollection services)
         {
-            services.AddSqlServer<PandoraContext>(connectionString);
-            services.AddScoped<IUserRepository, UserRepository>();
+            services.AddDbContext<PandoraContext>();
+            services.AddScoped<IUnitOfWork, UnitOfWork>();
             return services;
         }
     }
