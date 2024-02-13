@@ -2,7 +2,6 @@ using Microsoft.AspNetCore.Mvc;
 
 using Pandora.Application.Dto;
 using Pandora.Application.Services;
-using Pandora.Domain.ValueObjects;
 
 namespace Pandora.API.Controllers
 {

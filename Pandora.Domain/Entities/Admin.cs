@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Pandora.Domain.Entities
+namespace Pandora.Domain
 {
-    internal class Admin : Entity
+    class Admin : Entity
     {
     }
 }

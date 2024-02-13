@@ -4,9 +4,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-using Pandora.Domain;
-using Pandora.Domain.Entities;
-
 namespace Pandora.Domain
 {
     public interface IUnitOfWork

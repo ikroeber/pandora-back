@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 
-using Pandora.Domain.Entities;
+using Pandora.Domain;
 
 namespace Pandora.Infrastructure.Persistence.EFCore
 {

@@ -7,8 +7,7 @@ using System.Threading.Tasks;
 using AutoMapper;
 
 using Pandora.Application.Dto;
-using Pandora.Domain.Entities;
-using Pandora.Domain.ValueObjects;
+using Pandora.Domain;
 
 namespace Pandora.Application.Mappings
 {
@@ -16,7 +15,6 @@ namespace Pandora.Application.Mappings
     {
         public UserProfile()
         {
-            CreateMap<UserId, Guid>().ConvertUsing(userId => userId.Value);
             CreateMap<User, UserDto>();
             CreateMap<CreateUserDto, User>().ConvertUsing(dto => User.Create(dto.Email, dto.FirstName, dto.LastName));
 

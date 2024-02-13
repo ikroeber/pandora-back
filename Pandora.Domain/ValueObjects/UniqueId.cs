@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Pandora.Domain.ValueObjects
+namespace Pandora.Domain
 {
-    public abstract class UniqueId
+    public class UniqueId
     {
         public UniqueId(Guid value)
         {
@@ -21,5 +21,15 @@ namespace Pandora.Domain.ValueObjects
         }
 
         public Guid Value { get; private set; }
+
+        public static UniqueId Create()
+        {
+            return new UniqueId(Guid.NewGuid());
+        }
+
+        public static UniqueId From(Guid value)
+        {
+            return new UniqueId(value);
+        }
     }
 }

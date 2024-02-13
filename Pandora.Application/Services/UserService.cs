@@ -8,8 +8,6 @@ using AutoMapper;
 
 using Pandora.Application.Dto;
 using Pandora.Domain;
-using Pandora.Domain.Entities;
-using Pandora.Infrastructure.Persistence;
 
 namespace Pandora.Application.Services
 {

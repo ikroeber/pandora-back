@@ -7,7 +7,6 @@ using System.Threading.Tasks;
 using Microsoft.Extensions.DependencyInjection;
 
 using Pandora.Domain;
-using Pandora.Domain.Entities;
 
 namespace Pandora.Infrastructure.Persistence.EFCore
 {

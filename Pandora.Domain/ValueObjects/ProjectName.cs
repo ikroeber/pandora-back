@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Pandora.Domain.ValueObjects
+namespace Pandora.Domain
 {
     public class ProjectName
     {

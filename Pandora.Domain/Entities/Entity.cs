@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Pandora.Domain.Entities
+namespace Pandora.Domain
 {
-    public class Entity
+    public abstract class Entity
     {
+        public UniqueId Id { get; set; }
     }
 }

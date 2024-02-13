@@ -5,7 +5,7 @@ using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
-using Pandora.Domain.Entities;
+using Pandora.Domain;
 
 namespace Pandora.Domain
 {
@@ -18,7 +18,7 @@ namespace Pandora.Domain
         public T GetById(object id);
         public void Add(T entity);
         public void Update(T entity);
-        public void RemoveById(object id);
         public void Remove(T entity);
+        public void RemoveById(object id);
     }
 }

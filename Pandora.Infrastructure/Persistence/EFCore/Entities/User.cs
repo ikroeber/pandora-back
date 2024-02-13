@@ -9,21 +9,20 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using Microsoft.EntityFrameworkCore.ValueGeneration;
 
 using Pandora.Domain;
-using Pandora.Domain.ValueObjects;
 
 namespace Pandora.Infrastructure.Persistence.EFCore.Entities
 {
-    public class User : IEntityTypeConfiguration<Domain.Entities.User>
+    public class User : IEntityTypeConfiguration<Domain.User>
     {
-        public void Configure(EntityTypeBuilder<Domain.Entities.User> builder)
+        public void Configure(EntityTypeBuilder<Domain.User> builder)
         {
             builder.ToTable("User");
 
-            builder.HasKey(user => user.UserId);
-
-            builder.Property(user => user.UserId).HasConversion(
+            builder.HasKey(user => user.Id);
+            builder.Property(user => user.Id).HasColumnName("UserId");
+            builder.Property(user => user.Id).HasConversion(
                         userId => userId.Value,
-                        value => UserId.From(value))
+                        value => UniqueId.From(value))
                    .HasColumnName("UserId");
 
             builder.HasIndex(user => user.Email)
